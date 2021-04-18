@@ -1,0 +1,37 @@
+{
+  "name": "bexs-backend-exam",
+  "version": "1.0.0",
+  "description": "Bexs Back end Exam",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.10.0",
+    "http": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "mocha": "^8.3.2",
+    "mocha-each": "^2.0.1",
+    "sinon": "^10.0.0",
+    "sinon-chai": "^3.6.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "NODE_ENV=test node_modules/mocha/bin/mocha src/**/*.test.js --config ./src/test/mocharc.js --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/bexstech/bexs-backend-exam.git"
+  },
+  "author": "Maicon F. Santos",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/bexstech/bexs-backend-exam#readme"
+}

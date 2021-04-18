@@ -1,0 +1,35 @@
+{
+    "env": {
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly",
+        "_": false,
+        "faker": false,
+        "it": false,
+        "describe": false,
+        "should": false,
+        "mongoose": false,
+        "chai": false,
+        "app": false,
+        "sinon": false,
+        "after": false,
+        "before": false,
+        "stub": false,
+        "beforeEach": false,
+        "afterEach": false,
+        "forEach": false,
+        "config": false,
+        "logger": false,
+        "document": false
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "rules": {
+    }
+}
