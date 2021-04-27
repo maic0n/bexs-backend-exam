@@ -3,14 +3,14 @@ const path = require('path');
 
 /**
  * showRoutes by Maicon F. Santos
- * v1.00
+ * v1.01
  */
 module.exports.showRoutes = async (cli = false, inputFile = 'input-file.txt', departure, arrival) => {
 
     const dataFile = path.join('./', inputFile);
     let data;
     try {
-        data = fs.readFileSync(path.join('./', inputFile), 'utf8');
+        data = fs.readFileSync(dataFile, 'utf8');
     } catch(err) {
         return cli ? err.message + '\n' : {success: false, message: err.message};
     }
@@ -21,15 +21,10 @@ module.exports.showRoutes = async (cli = false, inputFile = 'input-file.txt', de
         routes.push(route);
     });
 
-    let matrix = [];
-    // Get possible departures
-    for (let route of routes) {
-        if (route[0] === departure) {
-            matrix.push([{[route[0]]: 0}, {[route[1]]: parseInt(route[2])}]);
-        }
-    }
-    
-    let end = false;
+    // Get possible departures (1st flight leg)
+    const matrix = routes.filter(rt => rt[0] === departure).map(row => [{[row[0]]: 0}, {[row[1]]: parseInt(row[2])}]);
+
+    let end =   false;
     let step = 0;
     while (!end) {
         end = true;
