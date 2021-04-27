@@ -20,11 +20,13 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "mocha": "^8.3.2",
     "mocha-each": "^2.0.1",
+    "nodemon": "^2.0.7",
     "sinon": "^10.0.0",
     "sinon-chai": "^3.6.0"
   },
   "scripts": {
     "start": "node src/index.js",
+    "dev": "nodemon --inspect src/index.js",
     "test": "NODE_ENV=test node_modules/mocha/bin/mocha src/**/*.test.js --config ./src/test/mocharc.js --exit"
   },
   "repository": {
