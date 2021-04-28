@@ -24,14 +24,14 @@ module.exports.showRoutes = async (cli = false, inputFile = 'input-file.txt', de
     // Get possible departures (1st flight leg)
     const matrix = routes.filter(rt => rt[0] === departure).map(row => [{[row[0]]: 0}, {[row[1]]: parseInt(row[2])}]);
 
-    let end =   false;
+    let end = false;
     let step = 0;
     while (!end) {
         end = true;
-        for (const r of matrix) {
-            const from = Object.keys(r[r.length - 1]).toString();
+        for (const matrixRow of matrix) {
+            const from = Object.keys(matrixRow[matrixRow.length - 1]).toString();
             if  (from !== arrival) {
-                const next = routes.find(v => v[0] === from);
+                const next = routes.find(routesRow => routesRow[0] === from);
                 if (next) {
                     matrix[step].push({[next[1]]: parseInt(next[2])});
                     end = false;
